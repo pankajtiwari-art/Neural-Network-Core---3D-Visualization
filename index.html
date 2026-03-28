@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Network Core - 3D Visualization</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Import Map for Three.js modules -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Loading Indicator -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="spinner"></div>
+        <p>Initializing Core...</p>
+    </div>
+
+    <!-- Error Display (if needed) -->
+    <div id="errorScreen" class="error-screen" style="display: none;">
+        <div class="error-content">
+            <h2>⚠️ System Error</h2>
+            <p id="errorMessage"></p>
+            <button onclick="location.reload()">Reload</button>
+        </div>
+    </div>
+
+    <!-- Canvas will be injected here -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
