@@ -2,7 +2,7 @@
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen.svg?style=for-the-badge)](https://pankajtiwari-art.github.io/Neural-Network-Core---3D-Visualization/)
 [![Three.js](https://img.shields.io/badge/three.js-black?style=for-the-badge&logo=three.js&logoColor=white)](https://threejs.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg?style=for-the-badge)](https://www.gnu.org/licenses/gpl-3.0)
 
 > A high-performance, interactive 3D visualization system built with Three.js featuring dynamic signal propagation, customizable geometries, and real-time post-processing effects.
 
@@ -183,7 +183,7 @@ Suggestions and improvements are welcome! Consider contributing by:
 
 ## 📄 License & Support
 
-* **License:** Free to use and modify for personal and commercial projects.
+* **License:** This project is licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0).
 * **Support:** If you encounter issues, check the browser console, verify file paths, or ensure JavaScript is enabled.
 
 ---
