@@ -1,0 +1,297 @@
+/* ==================== General Styles ==================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #141414;
+    color: #eee;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==================== Canvas ==================== */
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* ==================== Loading Screen ==================== */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #141414 0%, #1a1a1a 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    gap: 20px;
+}
+
+.loading-screen.hidden {
+    display: none;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #333;
+    border-top: 3px solid #33ccff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-screen p {
+    font-size: 16px;
+    color: #33ccff;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+/* ==================== Error Screen ==================== */
+.error-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 20, 20, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    backdrop-filter: blur(5px);
+}
+
+.error-content {
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid #ff4444;
+    text-align: center;
+    max-width: 500px;
+}
+
+.error-content h2 {
+    color: #ff4444;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.error-content p {
+    color: #ccc;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.error-content button {
+    padding: 10px 30px;
+    background-color: #33ccff;
+    color: #141414;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.error-content button:hover {
+    background-color: #00ddff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(51, 204, 255, 0.3);
+}
+
+/* ==================== lil-gui Customization ==================== */
+.lil-gui.root {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    top: auto !important;
+    max-height: calc(100vh - 30px);
+    overflow-y: auto;
+    --background-color: #1a1a1a;
+    --text-color: #eee;
+    --widget-color: #252525;
+    --focus-color: #33ccff;
+    --border-color: #333;
+}
+
+.lil-gui.root::-webkit-scrollbar {
+    width: 6px;
+}
+
+.lil-gui.root::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+.lil-gui.root::-webkit-scrollbar-thumb {
+    background: #33ccff;
+    border-radius: 3px;
+}
+
+.lil-gui.root::-webkit-scrollbar-thumb:hover {
+    background: #00ddff;
+}
+
+/* GUI Folder Styling */
+.lil-gui .folder > .title {
+    background-color: #252525;
+    border-color: #333;
+    color: #33ccff;
+    transition: all 0.2s ease;
+}
+
+.lil-gui .folder > .title:hover {
+    background-color: #2a2a2a;
+}
+
+.lil-gui .folder.open > .title {
+    border-bottom-color: #33ccff;
+}
+
+/* GUI Input Styling */
+.lil-gui input[type="text"],
+.lil-gui input[type="number"],
+.lil-gui input[type="color"] {
+    background-color: #252525 !important;
+    color: #eee !important;
+    border-color: #333 !important;
+    transition: all 0.2s ease;
+}
+
+.lil-gui input[type="text"]:hover,
+.lil-gui input[type="number"]:hover,
+.lil-gui input[type="color"]:hover {
+    background-color: #2a2a2a !important;
+    border-color: #33ccff !important;
+}
+
+.lil-gui input[type="text"]:focus,
+.lil-gui input[type="number"]:focus {
+    background-color: #2a2a2a !important;
+    border-color: #33ccff !important;
+    box-shadow: 0 0 8px rgba(51, 204, 255, 0.3) !important;
+}
+
+/* GUI Button Styling */
+.lil-gui button {
+    background-color: #252525 !important;
+    color: #33ccff !important;
+    border-color: #333 !important;
+    transition: all 0.2s ease;
+}
+
+.lil-gui button:hover {
+    background-color: #2a2a2a !important;
+    color: #00ddff !important;
+    border-color: #33ccff !important;
+}
+
+.lil-gui button:active {
+    background-color: #333 !important;
+}
+
+/* GUI Select Dropdown */
+.lil-gui select {
+    background-color: #252525 !important;
+    color: #eee !important;
+    border-color: #333 !important;
+}
+
+.lil-gui select:hover {
+    border-color: #33ccff !important;
+}
+
+/* GUI Slider */
+.lil-gui input[type="range"] {
+    accent-color: #33ccff;
+}
+
+/* GUI Label Color */
+.lil-gui > ul > li > .controller > .title {
+    color: #ccc;
+}
+
+/* ==================== Responsive Design ==================== */
+@media (max-width: 768px) {
+    .lil-gui.root {
+        bottom: 10px;
+        right: 10px;
+        font-size: 12px;
+    }
+
+    .loading-screen p {
+        font-size: 14px;
+    }
+
+    .error-content {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .lil-gui.root {
+        bottom: 5px;
+        right: 5px;
+        width: calc(100% - 10px);
+        max-width: 95%;
+    }
+
+    .error-content {
+        padding: 20px 15px;
+        margin: 15px;
+        border-radius: 8px;
+    }
+
+    .error-content h2 {
+        font-size: 20px;
+    }
+
+    .error-content button {
+        padding: 8px 20px;
+        font-size: 12px;
+    }
+}
+
+/* ==================== Print Styles ==================== */
+@media print {
+    body, html {
+        display: none;
+    }
+}
+
+/* ==================== Animations ==================== */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.loading-screen.fade-out {
+    animation: fadeOut 0.5s ease-out forwards;
+}
